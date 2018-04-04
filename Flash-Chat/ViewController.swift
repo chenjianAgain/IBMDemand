@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        welcomeLabel.isHidden = !self.welcomeLabel.isHidden
+        toggleButton.setTitle(welcomeLabel.isHidden ? "Show Label": "Hide Label", for: .normal)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        toggleButton.layer.removeAllAnimations()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
